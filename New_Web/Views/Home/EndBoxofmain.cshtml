@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Datalayer.Page>
+
+<section class="bg-body section-space-less10">
+    <div class="container">
+        <div class="row tab-space5">
+@foreach (var item in Model)
+{ 
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="category-box-layout1 overlay-dark-level-2 img-grayscale-hover text-center mb-10">
+                    <img src="~/PageImages/@item.ImageName" alt="news" class="img-fluid width-100">
+                    <div class="content p-30-r">
+                        <div class="ctg-title-xs">@item.Title</div>
+                        <h3 class="title-regular-light size-lg">
+                            <a href="/News/@item.PageID">@item.ShortDescription</a>
+                        </h3>
+                        <div class="post-date-light d-block d-sm-none d-md-block">
+                            <ul>
+                                <li>
+                                    <span>
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    </span>@item.CreateDate
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+}
+        </div>
+    </div>
+</section>
+
+

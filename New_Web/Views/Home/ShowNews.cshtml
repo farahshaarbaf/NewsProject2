@@ -1,0 +1,360 @@
+﻿@model Datalayer.Page
+<!-- Breadcrumb Area Start Here -->
+<section class="breadcrumbs-area" style="background-image: url('~/Content/img/banner/breadcrumbs-banner.jpg');">
+    <div class="container">
+        <div class="breadcrumbs-content">
+            <h1>کسب و کار</h1>
+            <ul>
+                <li>
+                    <a href="/">خانه</a> -
+                </li>
+                <li>
+                    <a href="#">@Model.Title</a> -
+                </li>
+                <li>جزئیات مطلب </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Area End Here -->
+
+
+
+<!-- News Details Page Area Start Here -->
+<section class="bg-accent section-space-less30">
+    <div class="news-details-layout2">
+        <div class="container">
+           
+
+            <!--عکس بالای صفحه شروع  -->
+            <div class="row mb-50-r">
+                <div class="col-12">
+                    <div class="position-relative img-overlay-70">
+                        <img src="~/PageImages/@Model.ImageName" alt="news-details" class="img-fluid banner_image">
+                        <div class="topic-box-top-sm">
+                            <div class="topic-box-sm color-cinnabar mb-20">@Model.Title</div>
+                        </div>
+                        <div class="mask-content-lg banner_content">
+                            <ul class="post-info-light mb-10">
+                               <li>
+                                    <a href="#">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>@Model.CreateDate.ToShamsi()
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>@Model.Visit
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-comments" aria-hidden="true"></i>@Model.PageComments.Count()
+                                    </a>
+                                </li>
+                            </ul>
+                            <h2 class="title-semibold-light size-c34 mb-40 sm-mb-10">@Model.ShortDescription</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--عکس بالای صفحه پایان  -->
+
+            <div class="row">
+                <div class="col-xl-8 col-lg-7 col-md-12 mb-30">
+                    <div class="item-box-light-lg mb-30">
+                        @Html.Raw(@Model.Text)
+
+                        <!--برچسب  شروع  -->
+                        <ul class="blog-tags item-inline">
+                            <li>برچسب ها</li>
+                           @foreach (var item in Model.Tags.Split(','))
+                           {
+                            <li>
+                                <a href="/Search?q=@item">@item</a>
+                            
+                            </li>
+                           }
+                          </ul>
+                        <!--برچسب  پایان   -->
+
+                        <!--صفحات اجتماعی  شروع  -->
+                        <div class="post-share-area item-shadow-1">
+                            <p>به اشتراک گذاری این مطلب!</p>
+                            <ul class="social-default item-inline">
+                                <li>
+                                    <a href="#" class="facebook">
+                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="twitter">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="google">
+                                        <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="pinterest">
+                                        <i class="fa fa-telegram" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="rss">
+                                        <i class="fa fa-rss" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="linkedin">
+                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--صفحات اجتماعی  پایان  -->
+
+                    </div>
+
+                    <!--مقاله بعدی وقبلی -->
+                    <div class="row no-gutters divider blog-post-slider">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                            @Html.Action("LastPage")
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-6 text-left">
+                            @Html.Action("NextPage")
+                            
+                        </div>
+                    </div>
+                    <!--مقاله بعدی وقبلی -->
+
+                    <div class="related-post item-box-light-lg mb-30">
+                        <div class="topic-border color-cod-gray mb-30 width-100">
+                            <div class="topic-box-lg color-cod-gray">مطالب مرتبط</div>
+                        </div>
+                        <div class="ne-carousel nav-control-top2 color-cod-gray" data-loop="true" data-items="3" data-margin="15" data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="2" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="2" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="2" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="3" data-r-large-nav="true" data-r-large-dots="false">
+                           @Html.Action("RelatedPosts")
+                           
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <div class="comments-area">
+                        <h2 class="title-semibold-dark size-xl border-bottom mb-40 pb-20">@Model.PageComments.Count</h2>
+                        <ul>
+                            @Html.Action("ShowComments")
+                        </ul>
+                    </div>
+
+
+
+
+
+
+
+
+
+@*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*@
+                    @*بخش کامنت گذاری *@
+
+                    <div class="leave-comments">
+                        <h2 class="title-semibold-dark size-xl border-bottom mb-40 pb-20">ارسال دیدگاه</h2>
+                        <div class="item-box-light-lg">
+                            <form id="leave-comments">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-12">
+                                        <div class="form-group">
+                                            <input placeholder="نام *" class="form-control" type="text" id="txtName">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <div class="form-group">
+                                            <input placeholder="* ایمیل" class="form-control ltr_input" type="email" id="txtEmail">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <div class="form-group">
+                                            <input placeholder="آدرس وب" class="form-control ltr_input" type="text" id="txtWebSite">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <textarea placeholder="پیام *" class="textarea form-control" id="txtComment" rows="8" cols="20"></textarea>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group mb-none">
+                                            <button type="button" class="btn-ftg-ptp-45" onclick="addComment()">ارسال دیدگاه</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    @*پایان بخش کامنت گذاری *@
+
+                </div>
+                <div class="ne-sidebar sidebar-break-md col-xl-4 col-lg-5 col-md-12">
+                    <div class="sidebar-box">
+                        <div class="item-box-light-md">
+                            <div class="topic-border color-cod-gray mb-30">
+                                <div class="topic-box-lg color-cod-gray">در ارتباط باشید</div>
+                            </div>
+                            <ul class="stay-connected-color overflow-hidden">
+                                <li class="facebook">
+                                    <a href="#">
+                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                        <div class="connection-quantity">50.2 k</div>
+                                        <p>طرفدار</p>
+                                    </a>
+                                </li>
+                                <li class="twitter">
+                                    <a href="#">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                        <div class="connection-quantity">10.3 k</div>
+                                        <p>دنبال کننده</p>
+                                    </a>
+                                </li>
+                                <li class="linkedin">
+                                    <a href="#">
+                                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                        <div class="connection-quantity">25.4 k</div>
+                                        <p>طرفدار</p>
+                                    </a>
+                                </li>
+                                <li class="rss">
+                                    <a href="#">
+                                        <i class="fa fa-rss" aria-hidden="true"></i>
+                                        <div class="connection-quantity">20.8 k</div>
+                                        <p>مشترک</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidebar-box">
+                        <div class="ne-banner-layout1 text-center item-box-light-md">
+                            <a href="#">
+                                <img src="~/Content/img/banner/banner6.jpg" alt="ad" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="sidebar-box">
+                        <div class="item-box-light-md">
+                            <ul class="btn-tab item-inline2 block-xs nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a href="#recent" data-toggle="tab" aria-expanded="true" class="active">جدید ها</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#popular" data-toggle="tab" aria-expanded="false">محبوب</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#common" data-toggle="tab" aria-expanded="false">متداول</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade active show" id="recent">
+                                    <div class="row">
+                                        @Html.Action("NewNews")
+                                    </div>
+
+
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="popular">
+                                    <div class="row">
+                                        @Html.Action("FavoriteColumn")
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="common">
+                                    <div class="row">
+                                        @Html.Action("NormalPost")
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <div class="sidebar-box">
+                        <div class="item-box-light-md">
+                            <div class="topic-border color-cod-gray mb-30">
+                                <div class="topic-box-lg color-cod-gray">خبرنامه</div>
+                            </div>
+                            <div class="newsletter-area bg-primary">
+                                <h2 class="title-medium-light size-xl pl-10 pr-10">در لیست ایمیل ما عضو شوید تا به روز رسانی ها را دریافت کنید!</h2>
+                                <img src="~/Content/img/banner/newsletter.png" alt="newsletter" class="img-fluid m-auto mb-15">
+                                <p>در خبرنامه ما عضو شوید تا به روز بمانید</p>
+                                <form>
+                                    <div class="input-group stylish-input-group">
+                                        <input type="text" placeholder="ایمیل خود را وارد کنید" class="form-control ltr_input">
+                                        <span class="input-group-addon">
+                                            <button type="submit">
+                                                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="sidebar-box">
+                        <div class="item-box-light-md">
+                            <div class="topic-border color-cod-gray mb-25">
+                                <div class="topic-box-lg color-cod-gray">برچسب ها</div>
+                            </div>
+                            <ul class="sidebar-tags2">
+                                @Html.Action("ShowGroupsInMenu", "News")
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- News Details Page Area End Here -->
+
+<script>
+    function addComment() {
+        $.ajax({
+            url: "/Home/AddComment/" + @Model.PageID,
+            type: "Get",
+            data: { name: $("#txtName").val(), email: $("#txtEmail").val(), website: $("#txtWebSite").val(), comment: $("#txtComment").val() }
+        }).done(function(result) {
+
+            $("#commentList").html(result);
+            $("#txtName").val("");
+            $("#txtEmail").val("");
+            $("#txtWebSite").val("");
+            $("#txtComment").val("");
+
+        });
+    }
+</script>

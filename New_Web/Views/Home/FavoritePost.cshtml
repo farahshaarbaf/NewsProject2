@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Datalayer.Page>
+<section class="section-space-bottom">
+    <div class="container">
+        <div class="item-box-light-md-less10">
+            <div class="ne-isotope-all">
+                <div class="topic-border color-cinnabar mb-30">
+                    <div class="topic-box-lg color-cinnabar">اخبار داغ </div>
+                    <div class="isotope-classes-tab isotop-btn">
+                        @*<a href="#" data-filter=".all">همه</a>**@
+                        <a href="#" data-filter=".burger">سیاسی</a>
+                        <a href="#" data-filter=".desert">ورزشی</a>
+                        <a href="#" data-filter=".fast-food">اقتصادی</a>
+                        <a href="#" data-filter=".drinks">هنری</a>
+                    </div>
+                    <div class="more-info-link">
+                        <a href="/Group/11/اجتماعی">
+                            بیشتر
+                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row tab-space5 featuredContainer  ">
+                    @Html.Action("syasi")
+                    @Html.Action("Sport")
+                    @Html.Action("eghtesad")
+                    @Html.Action("honari")
+               
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+

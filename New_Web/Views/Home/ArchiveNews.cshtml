@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Datalayer.Page>
+<div class="col-xl-8 col-lg-12 mb-30">
+    <div class="item-box-light-md-less30 ie-full-width">
+        <div class="topic-border color-cinnabar mb-30">
+            <div class="topic-box-lg color-cinnabar">آرشیو اخبار</div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-12 col-md-6 col-sm-12">
+                    <div class="media media-none--md mb-30">
+                        <div class="position-relative width-40">
+                            <a href="~/Content/single-news-1.html" class="img-opacity-hover">
+                                <img src="/PageImages/@item.ImageName" alt="news" class="img-fluid">
+                            </a>
+                            <div class="topic-box-top-xs">
+                                <div class="topic-box-sm color-cod-gray mb-20">@item.Title </div>
+                            </div>
+                        </div>
+                        <div class="media-body p-mb-none-child media-margin30">
+                            <div class="post-date-dark">
+                                <ul>
+                                    <li>
+                                        <span>
+                                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        </span>@item.CreateDate.ToShamsi()
+                                    </li>
+                                </ul>
+                            </div>
+                            <h3 class="title-semibold-dark size-lg mb-15">
+                                <a href="~/Content/single-news-1.html">@item.ShortDescription</a>
+                            </h3>
+                            <p>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+
+

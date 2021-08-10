@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Datalayer.Page>
+
+@foreach (var item in Model)
+{
+<div class="img-overlay-70-c">
+    <div class="mask-content-sm">
+        <div class="topic-box-sm color-cod-gray mb-20">@item.Title</div>
+        <h3 class="title-medium-light">
+            <a href="/News/@item.GroupID/@item.PageID">@item.ShortDescription</a>
+        </h3>
+    </div>
+    <div class="text-center">
+        <a class="play-btn popup-youtube" href="@item.Video">
+            <img src="~/Content/img/banner/play.png" alt="play" class="img-fluid">
+        </a>
+    </div>
+    <img src="~/PageImages/@item.ImageName" alt="news" class="img-fluid width-100">
+</div>
+}

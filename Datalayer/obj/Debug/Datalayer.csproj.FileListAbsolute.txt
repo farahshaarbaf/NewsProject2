@@ -1,0 +1,14 @@
+E:\EndProject\New_Web - Copy\New_Web\Datalayer\bin\Debug\Datalayer.dll.config
+E:\EndProject\New_Web - Copy\New_Web\Datalayer\bin\Debug\Datalayer.dll
+E:\EndProject\New_Web - Copy\New_Web\Datalayer\bin\Debug\Datalayer.pdb
+E:\EndProject\New_Web - Copy\New_Web\Datalayer\bin\Debug\EntityFramework.dll
+E:\EndProject\New_Web - Copy\New_Web\Datalayer\bin\Debug\EntityFramework.SqlServer.dll
+E:\EndProject\New_Web - Copy\New_Web\Datalayer\bin\Debug\EntityFramework.xml
+E:\EndProject\New_Web - Copy\New_Web\Datalayer\bin\Debug\EntityFramework.SqlServer.xml
+E:\EndProject\New_Web - Copy\New_Web\Datalayer\bin\Debug\System.Web.Mvc.xml
+E:\EndProject\New_Web - Copy\New_Web\Datalayer\obj\Debug\Datalayer.csprojResolveAssemblyReference.cache
+E:\EndProject\New_Web - Copy\New_Web\Datalayer\obj\Debug\Datalayer.dll
+E:\EndProject\New_Web - Copy\New_Web\Datalayer\obj\Debug\Datalayer.pdb
+E:\EndProject\New_Web - Copy\New_Web\Datalayer\obj\Debug\Datalayer.Migrations.initialDatabace.resources
+E:\EndProject\New_Web - Copy\New_Web\Datalayer\obj\Debug\Datalayer.csproj.GenerateResource.Cache
+E:\EndProject\New_Web - Copy\New_Web\Datalayer\obj\Debug\Datalayer.Migrations.Add_pic.resources

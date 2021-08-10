@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Panel";
+}
+
+<h2>Panel</h2>
+@if (User.Identity.IsAuthenticated)
+            {
+    <div class="thumbnail">
+        <ul>
+           <li>
+               <a href="/Admin/PageGroups" class="btn btn-sm btn-primary">
+                   <i>مدریت گروه ها</i>
+               </a>
+           </li>
+            <li>
+                <a href="/Admin/Pages" class="btn btn-sm btn-primary">
+                    <i>مدریت صفحات</i>
+                </a>
+            </li>
+                
+           
+                
+           
+        </ul>
+    </div>
+}

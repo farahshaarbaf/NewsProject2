@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Datalayer.Page>
+
+            @foreach (var item in Model)
+                 {
+                    <div class="col-xl-6 col-lg-4 col-md-4 col-sm-6 col-6 mb-25">
+                        <div class="position-relative">
+                            <div class="topic-box-top-xs">
+                                <div class="topic-box-sm color-cod-gray mb-20">@item.Title</div>
+                            </div>
+                            <a href="~/Content/single-news-1.html" class="img-opacity-hover">
+                                <img src="~/PageImages/@item.ImageName" alt="news" class="img-fluid width-100 mb-10">
+                            </a>
+                            <h3 class="title-medium-dark size-sm mb-none">
+                                <a href="~/Content/single-news-1.html">@item.ShortDescription</a>
+                            </h3>
+                        </div>
+                    </div>
+                 }

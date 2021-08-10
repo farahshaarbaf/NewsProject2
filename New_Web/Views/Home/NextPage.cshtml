@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Datalayer.Page>
+
+@foreach (var item in Model)
+{
+        <a href="/News/@item.GroupID/@item.PageID" class="next-article">
+            مقاله بعدی
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </a>
+        <h3 class="title-medium-dark pl-50">@item.ShortDescription</h3>
+
+
+}

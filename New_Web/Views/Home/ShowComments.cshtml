@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Datalayer.PageComment>
+
+@foreach (var item in Model)
+{
+         <!-- start each comment -->
+    <li class="item-box-light-lg">
+        <div class="media media-none-xs">
+            <img src="~/Content/img/@item.ImageName" class="img-fluid rounded-circle width50-mb" alt="comments" height="100" width="100">
+            <div class="media-body comments-content media-margin30">
+                <h3 class="title-semibold-dark">
+                    <a href="#">
+                        @item.Name ،
+                        <span>@item.CreateDate.ToShamsi()</span>
+                    </a>
+                </h3>
+                <p>@item.Comment </p>
+            </div>
+        </div>
+    </li>
+        <!-- end each comment -->
+}
+
+

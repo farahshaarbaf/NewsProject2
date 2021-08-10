@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Datalayer.Page>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<p>
+    <a href="/Admin/Pages/Create" class="btn btn-success" id="btnNewGroup"> افزودن خبر جدید</a>
+    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PageGroup.GroupTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.Visit)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.ShowInSlider)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowInVideo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+   
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="/PageImages/@item.ImageName" class="thumbnail" style="max-width: 120px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PageGroup.GroupTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Visit)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowInSlider)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowInVideo)
+            </td>
+            <td>
+                @item.CreateDate.ToShamsi()
+            </td>
+            <td>
+                @*Edit*@
+                <a  href="/Admin/Pages/Edit/@item.PageID" class="btn btn-sm btn-warning">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </a>
+
+                @*Details*@
+                <a href="/Admin/Pages/Details/@item.PageID" class="btn btn-sm btn-info">
+                    <i class="glyphicon glyphicon-check"></i>
+                </a>
+
+
+                @*Delete*@
+                <a href="/Admin/Pages/Delete/@item.PageID"  class="btn btn-sm btn-danger">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>
+@if (User.Identity.IsAuthenticated)
+{
+    <a href="/Admin/Account/Panel" class="btn btn-success" id="btnNewGroup"> برگشت به پنل کاربری</a>
+}

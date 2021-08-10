@@ -1,0 +1,280 @@
+﻿@model IEnumerable<Datalayer.Page>
+
+@{
+    ViewBag.Title = "Index";
+}
+<section class="breadcrumbs-area" style="background-image: url('~/Content/img/banner/breadcrumbs-banner.jpg');">
+    <div class="container">
+        <div class="breadcrumbs-content">
+            <h1>اخبار </h1>
+            <ul>
+                <li>
+                    <a href="~/Content/index.html">خانه</a> -
+                </li>
+                <li>@ViewBag.name</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Area End Here -->
+<!-- Post Style 3 Page Area Start Here -->
+<section class="bg-body section-space-less30">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <header><i class="icons icon-doc-2"></i>  <h3>تعداد "@Model.Count()" با عبارت "@ViewBag.Name" یافت شد .</h3> </header>
+                @foreach (var item in Model)
+            {
+                    <div class="position-relative mb-50-r">
+                        <a class="img-opacity-hover mb-30" href="single-news-1.html">
+                            <img src="~/PageImages/@item.ImageName" alt="news" class="img-fluid width-100">
+                        </a>
+                        <div class="topic-box-top-lg">
+                            <div class="topic-box-sm color-cod-gray mb-20">@item.Title</div>
+                        </div>
+                        <div class="post-date-dark">
+                            <ul>
+                                <li>
+                                    <span>
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    </span>@item.CreateDate
+                                </li>
+                            </ul>
+                        </div>
+                        <h3 class="title-medium-dark size-c26">
+                            <a href="single-news-1.html">@item.ShortDescription</a>
+                        </h3>
+                        <p>برای دیدن مطالب بیشتر این پست به لینک زیر مراجعه کنید </p>
+                        <a href="/News/@item.GroupID/@item.PageID" class="btn-ftf-dtp-52">بیشتر بخوانید</a>
+                    </div>
+
+                }
+
+
+                <div class="row mb-30">
+                    <div class="col-sm-6 col-12">
+                        <div class="pagination-btn-wrapper text-center--xs mb15--xs">
+                            <ul>
+                                <li class="active">
+                                    <a href="#">1</a>
+                                </li>
+                                <li>
+                                    <a href="#">2</a>
+                                </li>
+                                <li>
+                                    <a href="#">3</a>
+                                </li>
+                                <li>
+                                    <a href="#">4</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12">
+                        <div class="pagination-result text-left pt-10 text-center--xs">
+                            <p class="mb-none">صفحه 1 از 4</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ne-sidebar sidebar-break-md col-lg-4 col-md-12">
+                <div class="sidebar-box">
+                    <div class="topic-border color-cod-gray mb-30">
+                        <div class="topic-box-lg color-cod-gray">در ارتباط باشید</div>
+                    </div>
+                    <ul class="stay-connected overflow-hidden">
+                        <li class="facebook">
+                            <a href="#">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                <div class="connection-quantity">50.2 k</div>
+                                <p>طرفدار</p>
+                            </a>
+                        </li>
+                        <li class="twitter">
+                            <a href="#">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                                <div class="connection-quantity">10.3 k</div>
+                                <p>دنبال کننده</p>
+                            </a>
+                        </li>
+                        <li class="linkedin">
+                            <a href="#">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                <div class="connection-quantity">25.4 k</div>
+                                <p>طرفدار</p>
+                            </a>
+                        </li>
+                        <li class="rss">
+                            <a href="#">
+                                <i class="fa fa-rss" aria-hidden="true"></i>
+                                <div class="connection-quantity">20.8 k</div>
+                                <p>مشترک</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sidebar-box">
+                    <div class="ne-banner-layout1 text-center">
+                        <a href="#">
+                            <img src="~/Content/img/banner/banner3.jpg" alt="ad" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidebar-box">
+                    <div class="topic-border color-cod-gray mb-30">
+                        <div class="topic-box-lg color-cod-gray">خبرنامه</div>
+                    </div>
+                    <div class="newsletter-area bg-primary">
+                        <h2 class="title-medium-light size-xl pl-30 pr-30">در لیست ایمیل ما عضو شوید تا به روز رسانی ها را دریافت کنید!</h2>
+                        <img src="~/Content/img/banner/newsletter.png" alt="newsletter" class="img-fluid m-auto mb-15">
+                        <p>در خبرنامه ما عضو شوید تا به روز بمانید</p>
+                        <form>
+                            <div class="input-group stylish-input-group">
+                                <input type="text" placeholder="ایمیل خود را وارد کنید" class="form-control ltr_input">
+                                <span class="input-group-addon">
+                                    <button type="submit">
+                                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="sidebar-box">
+                    <div class="topic-border color-cod-gray mb-30">
+                        <div class="topic-box-lg color-cod-gray">بیشترین نقد و بررسی ها</div>
+                    </div>
+                    <div class="position-relative mb30-list bg-body">
+                        <div class="topic-box-top-xs">
+                            <div class="topic-box-sm color-cod-gray mb-20">اپل</div>
+                        </div>
+                        <div class="media">
+                            <a class="img-opacity-hover" href="single-news-1.html">
+                                <img src="~/Content/img/news/news117.jpg" alt="news" class="img-fluid">
+                            </a>
+                            <div class="media-body">
+                                <div class="post-date-dark">
+                                    <ul>
+                                        <li>
+                                            <span>
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            </span>10 اردیبهشت 1397
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h3 class="title-medium-dark mb-none">
+                                    <a href="single-news-2.html">لورم ایپسوم متن ساختگی با تولید سادگی</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative mb30-list bg-body">
+                        <div class="topic-box-top-xs">
+                            <div class="topic-box-sm color-cod-gray mb-20">گجت ها</div>
+                        </div>
+                        <div class="media">
+                            <a class="img-opacity-hover" href="single-news-2.html">
+                                <img src="~/Content/img/news/news118.jpg" alt="news" class="img-fluid">
+                            </a>
+                            <div class="media-body">
+                                <div class="post-date-dark">
+                                    <ul>
+                                        <li>
+                                            <span>
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            </span>6 خرداد 1398
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h3 class="title-medium-dark mb-none">
+                                    <a href="~/Content/single-news-3.html">لورم ایپسوم متن ساختگی با تولید سادگی</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative mb30-list bg-body">
+                        <div class="topic-box-top-xs">
+                            <div class="topic-box-sm color-cod-gray mb-20">نرم افزار</div>
+                        </div>
+                        <div class="media">
+                            <a class="img-opacity-hover" href="single-news-3.html">
+                                <img src="~/Content/img/news/news119.jpg" alt="news" class="img-fluid">
+                            </a>
+                            <div class="media-body">
+                                <div class="post-date-dark">
+                                    <ul>
+                                        <li>
+                                            <span>
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            </span>22 خرداد 1398
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h3 class="title-medium-dark mb-none">
+                                    <a href="~/Content/single-news-1.html">لورم ایپسوم متن ساختگی با تولید سادگی</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative mb30-list bg-body">
+                        <div class="topic-box-top-xs">
+                            <div class="topic-box-sm color-cod-gray mb-20">تکنولوژی</div>
+                        </div>
+                        <div class="media">
+                            <a class="img-opacity-hover" href="single-news-1.html">
+                                <img src="~/Content/img/news/news120.jpg" alt="news" class="img-fluid">
+                            </a>
+                            <div class="media-body">
+                                <div class="post-date-dark">
+                                    <ul>
+                                        <li>
+                                            <span>
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            </span>10 اردیبهشت 1397
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h3 class="title-medium-dark mb-none">
+                                    <a href="~/Content/single-news-2.html">لورم ایپسوم متن ساختگی با تولید سادگی</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-relative mb30-list bg-body">
+                        <div class="topic-box-top-xs">
+                            <div class="topic-box-sm color-cod-gray mb-20">آی پد</div>
+                        </div>
+                        <div class="media">
+                            <a class="img-opacity-hover" href="single-news-1.html">
+                                <img src="~/Content/img/news/news121.jpg" alt="news" class="img-fluid">
+                            </a>
+                            <div class="media-body">
+                                <div class="post-date-dark">
+                                    <ul>
+                                        <li>
+                                            <span>
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            </span>10 اردیبهشت 1397
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h3 class="title-medium-dark mb-none">
+                                    <a href="~/Content/single-news-2.html">لورم ایپسوم متن ساختگی با تولید سادگی</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-box">
+                    <div class="topic-border color-cod-gray mb-25">
+                        <div class="topic-box-lg color-cod-gray">برچسب ها</div>
+                    </div>
+                    <ul class="sidebar-tags">
+                        @Html.Action("ShowGroupsInMenu", "News")
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Post Style 3 Page Area End Here -->

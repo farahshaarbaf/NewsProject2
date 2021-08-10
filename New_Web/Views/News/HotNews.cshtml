@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Datalayer.Page>
+
+<section class="container">
+    <div class="bg-body-color ml-15 pr-15 mb-10 mt-10">
+        <div class="row no-gutters d-flex align-items-center">
+            <div class="col-lg-2 col-md-3 col-sm-4 col-5">
+                <div class="topic-box">اخبار داغ</div>
+            </div>
+            <div class="col-lg-10 col-md-9 col-sm-8 col-7">
+                <div class="feeding-text-light2">
+                    <ol id="sample" class="ticker">
+                        @foreach (var item in Model)
+                        {
+                            <li>
+                                <a href="#">@item.PageID =>@item.ShortDescription</a>
+                            </li>
+                        }
+                        
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

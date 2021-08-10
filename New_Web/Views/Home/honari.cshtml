@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Datalayer.Page>
+
+@foreach (var item in Model)
+{
+<div class="col-lg-4 col-md-6 col-sm-6 col-12 drinks">
+
+    <div class="img-overlay-70 img-scale-animate mb-10">
+
+        <img src="~/PageImages/@item.ImageName" alt="news" class="img-fluid width-100">
+        <div class="topic-box-top-sm">
+            <div class="topic-box-sm color-cod-gray mb-20">@item.Title</div>
+        </div>
+        <div class="mask-content-xs">
+            <div class="post-date-light d-none d-md-block">
+                <ul>
+                    <li>
+                        <span>
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </span>@item.CreateDate.ToShamsi()
+                    </li>
+                </ul>
+            </div>
+            <h3 class="title-medium-light size-lg">
+                <a href="~/Content/single-news-1.html">@item.ShortDescription</a>
+            </h3>
+        </div>
+    </div>
+
+</div>
+}

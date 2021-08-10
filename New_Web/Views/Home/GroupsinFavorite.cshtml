@@ -1,0 +1,6 @@
+﻿@model IEnumerable<Datalayer.PageGroup>
+    @foreach (var item in Model)
+    {
+        <a href="/" data-filter=".@item.GroupID">@item.GroupTitle</a>
+        
+    }

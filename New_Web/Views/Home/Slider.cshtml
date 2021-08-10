@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Datalayer.Page>
+<div class="col-xl-8 col-lg-12">
+    <div class="main-slider1 img-overlay-slider">
+        <div class="bend niceties preview-1">
+            <div id="ensign-nivoslider-3" class="slides">
+                @foreach (var item in Model)
+                {
+                    <img src="~/PageImages/@item.ImageName" alt="slider" title="#@item.PageID">
+                }
+            </div>
+            @foreach (var item in Model)
+            {
+                        <!-- direction -->
+                <div id="@item.PageID" class="t-cn slider-direction">
+                    <div class="slider-content s-tb slide-1">
+                        <div class="title-container s-tb-c">
+                            <div class="text-right pl-50 pl20-xs">
+                                <div class="topic-box-sm color-cinnabar mb-20">@item.Title</div>
+                                <div class="post-date-light d-none d-sm-block">
+                                    <ul>
+                                        <li>
+                                            <span>
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            </span>@item.CreateDate
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="slider-title">@item.ShortDescription</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>

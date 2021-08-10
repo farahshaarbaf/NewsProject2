@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Datalayer.Page>
+<div class="col-xl-4 col-lg-5 col-md-12 col-sm-12">
+            <div class="footer-box">
+                <h2 class="title-bold-light title-bar-left text-uppercase">گالری مطالب</h2>
+                <ul class="post-gallery shine-hover">
+                        @foreach (var item in Model)
+            {
+                            <li>
+                                
+                                        <a href="~/Content/gallery-style-1.html" class="img-opacity-hover img-overlay-70">
+                                            <figure>
+                                                <img src="/PageImages/@item.ImageName" alt="post">
+                                            </figure>
+                                        </a>
+                                   
+                            </li>
+                        }
+              
+                </ul>
+
+            </div>
+        </div>
